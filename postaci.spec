@@ -16,7 +16,7 @@ Requires:	apache-mod_auth
 Requires:	php >= 4.1.0
 Requires:	php-imap
 Requires:	php-mysql
-Buildarch:	noarch
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_postacidir	/home/services/httpd/html/postaci
