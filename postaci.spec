@@ -5,6 +5,7 @@ Release:	0.1
 License:	GPL
 Group:		Applications
 Source0:	http://www.trlinux.com/dist/%{name}-%{version}.tar.gz
+Patch0:		postaci-pld.patch
 URL:		http://www.trlinux.com/
 Requires:	webserver
 Requires:	apache-mod_auth
@@ -27,6 +28,7 @@ Polish, Norwegian, Dutch, Italian.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
