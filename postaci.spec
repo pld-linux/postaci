@@ -9,7 +9,8 @@ Patch0:		postaci-pld.patch
 URL:		http://www.trlinux.com/
 Requires:	webserver
 Requires:	apache-mod_auth
-Requires:	php
+Requires:	php >= 4.1.0
+Requires:	php-imap
 Buildarch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -32,29 +33,35 @@ Polish, Norwegian, Dutch, Italian.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_postacidir}/{classes,images,includes,lang,tmp/{send,store}}
+install -d $RPM_BUILD_ROOT%{_postacidir}/{classes,images,includes,lang,tmp/{send,store},queries/UPGRADE}
 
 cat >> $RPM_BUILD_ROOT%{_postacidir}/.htaccess << EOF
 php_flag register_globals on
+AddType application/x-httpd-php .php .php3 .phtml .inc
+AddType application/x-httpd-php-source .phps
 EOF
 
-install *.php $RPM_BUILD_ROOT%{_postacidir}
+install *.php INSTALL $RPM_BUILD_ROOT%{_postacidir}
 install classes/*.inc $RPM_BUILD_ROOT%{_postacidir}/classes
 install images/*.{gif,psd,jpg} $RPM_BUILD_ROOT%{_postacidir}/images
 install includes/*.inc $RPM_BUILD_ROOT%{_postacidir}/includes
 install lang/*.inc $RPM_BUILD_ROOT%{_postacidir}/lang
+install queries/{postaci-{ms,my,pg}sql-1.1,tblDomains}.sql $RPM_BUILD_ROOT%{_postacidir}/queries
+install queries/UPGRADE/upgrade-mysql-1.1.{0,1}-1.1.3.sql $RPM_BUILD_ROOT%{_postacidir}/queries/UPGRADE
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc/{FAQ/FAQ,TODO,WHATSNEW,THANKS}
+%doc doc/{FAQ/FAQ,TODO,WHATSNEW,THANKS,INSTALL,UPGRADE}
 %dir %{_postacidir}
 # %attr(640,root,http) %config(noreplace) %verify(not size mtime md5) %{_postacidir}/config.inc.php
 %{_postacidir}/classes
 %{_postacidir}/images
 %{_postacidir}/includes
 %{_postacidir}/lang
+%{_postacidir}/queries
 %{_postacidir}/*.php
 %{_postacidir}/.htaccess
+%{_postacidir}/INSTALL
