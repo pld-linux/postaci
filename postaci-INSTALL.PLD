@@ -1,0 +1,19 @@
+* Create a database for postaci.
+	mysqladmin create postaci
+* make sure the database name is the same at includes/global.inc file.
+* run the following command and create the necessary tables in the DB.
+	cd /home/services/httpd/html/postaci/queries
+	mysql postaci < postaci-mysql-1.1.sql
+* insert the domains you like to the tblDomains.sql file in queries folder. The syntax is as follows.
+	INSERT INTO tblDomains VALUES (1,'trlinux.com');
+	INSERT INTO tblDomains VALUES (2,'test.com');
+* Insert the data for Domains to the DB with the following command.
+	mysql postaci < tblDomains.sql
+* Create a Database USER.
+	$ mysql postaci
+	mysql > grant usage on postaci.* to dbuser@localhost;
+	mysql > grant select,insert,delete,update on postaci.* to dbuser@localhost;
+	mysql > exit;
+	$ mysqladmin -u dbuser password "new password"
+* make sure the password is the same as "new password" in the includes/global.inc file.
+* thats all........
