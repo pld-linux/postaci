@@ -1,24 +1,24 @@
-Summary:	Postaci is a PHP based POP3/IMAP based e-mail client
-Summary:	Postaci jest opartym na PHP klientem pocztowym obs³uguj±cym POP3/IMAP
-Name:		postaci
-Version:	1.1.3
-Release:	0.4
-License:	GPL
-Group:		Applications
-Source0:	http://www.trlinux.com/dist/%{name}-%{version}.tar.gz
-Source1:	%{name}-INSTALL.PLD
-Source2:	%{name}.conf
-Patch0:		%{name}-pld.patch
-URL:		http://www.trlinux.com/
-Requires:	webserver
-Requires:	apache-mod_auth
-Requires:	php >= 4.1.0
-Requires:	php-imap
-Requires:	php-mysql
-Buildarch:	noarch
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Summary:		Postaci is a PHP based POP3/IMAP based e-mail client
+Summary(pl):	Postaci jest opartym na PHP klientem pocztowym obs³uguj±cym POP3/IMAP
+Name:			postaci
+Version:		1.1.3
+Release:		0.5
+License:		GPL
+Group:			Applications/Mail
+Source0:		http://www.trlinux.com/dist/%{name}-%{version}.tar.gz
+Source1:		%{name}-INSTALL.PLD
+Source2:		%{name}.conf
+Patch0:			%{name}-pld.patch
+URL:			http://www.trlinux.com/
+Requires:		webserver
+Requires:		apache-mod_auth
+Requires:		php >= 4.1.0
+Requires:		php-imap
+Requires:		php-mysql
+Buildarch:		noarch
+BuildRoot:		%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_postacidir	/home/services/httpd/html/postaci
+%define			_postacidir	/home/services/httpd/html/postaci
 
 %description
 Postaci is a PHP based POP3/IMAP e-mail client. It supports both
