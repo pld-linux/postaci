@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Applications/Mail
 Source0:	http://www.trlinux.com/dist/%{name}-%{version}.tar.gz
+# Source0-md5:	2e2200792114c71e0fbcb820dd95e314
 Source1:	%{name}-INSTALL.PLD
 Source2:	%{name}.conf
 Patch0:		%{name}-pld.patch
