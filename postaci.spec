@@ -2,7 +2,7 @@ Summary:	Postaci is a PHP based POP3/IMAP based e-mail client
 Summary(pl):	Postaci jest opartym na PHP klientem pocztowym obs³uguj±cym POP3/IMAP
 Name:		postaci
 Version:	1.1.3
-Release:	0.5
+Release:	1
 License:	GPL
 Group:		Applications/Mail
 Source0:	http://www.trlinux.com/dist/%{name}-%{version}.tar.gz
@@ -10,7 +10,7 @@ Source1:	%{name}-INSTALL.PLD
 Source2:	%{name}.conf
 Patch0:		%{name}-pld.patch
 URL:		http://www.trlinux.com/
-Requires:	webserver
+Requires:	apache
 Requires:	apache-mod_auth
 Requires:	php >= 4.1.0
 Requires:	php-imap
@@ -35,7 +35,7 @@ Spanish, Turkish.
 Postaci jest opartym na PHP klientem pocztowym wspieraj±cym POP3/IMAP.
 Obs³uguje on obydwa protoko³y, a wybór domy¶lnego odbywa siê poprzez
 plik konfiguracyjny. Postaci jest niezale¿ny od platformy. Mo¿e
-dzia³aæ na dowolnym systemie operacyknym z obs³ug± PHP. Postaci jest
+dzia³aæ na dowolnym systemie operacyjnym z obs³ug± PHP. Postaci jest
 równie¿ niezale¿ny od bazy danych. Zawiera wsparcie dla MySQL, mSQL,
 Microsoft SQL, Sybase, PostgreSQL. Do symulacji skrzynek pocztowych
 POP3 korzysta z bardzo skomplikowanych operacji w bazie danych.
@@ -95,10 +95,12 @@ if [ "$1" = 0 ]; then
 fi
 
 %files
-%defattr(640,root,http,750)
+%defattr(644,root,http,755)
 %doc doc/{FAQ/FAQ,TODO,WHATSNEW,THANKS,INSTALL,UPGRADE}
 %doc INSTALL-PLD
+%defattr(640,root,http,750)
 %dir %{_postacidir}
+%dir %{_postacidir}/includes
 %config(noreplace) %verify(not size mtime md5) %{_postacidir}/includes/global.inc
 %attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/httpd/%{name}.conf
 %{_postacidir}/classes
