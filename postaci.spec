@@ -1,7 +1,7 @@
 Summary:	Postaci is a PHP based POP3/IMAP based e-mail client
 Name:		postaci
 Version:	1.1.3
-Release:	0.1
+Release:	0.2
 License:	GPL
 Group:		Applications
 Source0:	http://www.trlinux.com/dist/%{name}-%{version}.tar.gz
@@ -60,7 +60,7 @@ zcat %{_docdir}/%{name}-%{version}/INSTALL-PLD
 echo "You can find that info in %{_docdir}/%{name}-%{version}/INSTALL-PLD" >&2
 
 %files
-%defattr(644,root,root,755)
+%defattr(640,root,http,750)
 %doc doc/{FAQ/FAQ,TODO,WHATSNEW,THANKS,INSTALL,UPGRADE}
 %doc INSTALL-PLD
 %dir %{_postacidir}
@@ -73,3 +73,5 @@ echo "You can find that info in %{_docdir}/%{name}-%{version}/INSTALL-PLD" >&2
 %{_postacidir}/*.php
 %{_postacidir}/.htaccess
 %{_postacidir}/INSTALL
+%attr(770,root,http) %{_postacidir}/tmp/send
+%attr(770,root,http) %{_postacidir}/tmp/store
