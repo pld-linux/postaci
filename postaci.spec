@@ -36,7 +36,7 @@ cat >> $RPM_BUILD_ROOT%{_postacidir}/.htaccess << EOF
 php_flag register_globals on
 EOF
 
-install *.php .htaccess $RPM_BUILD_ROOT%{_postacidir}
+install *.php $RPM_BUILD_ROOT%{_postacidir}
 install classes/*.inc $RPM_BUILD_ROOT%{_postacidir}/classes
 install images/*.{gif,psd,jpg} $RPM_BUILD_ROOT%{_postacidir}/images
 install includes/*.inc $RPM_BUILD_ROOT%{_postacidir}/includes
@@ -47,9 +47,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc FAQ/FAQ TODO WHATSNEW THANKS
+%doc doc/{FAQ/FAQ,TODO,WHATSNEW,THANKS}
 %dir %{_postacidir}
-%attr(640,root,http) %config(noreplace) %verify(not size mtime md5) %{_postacidir}/config.inc.php
+# %attr(640,root,http) %config(noreplace) %verify(not size mtime md5) %{_postacidir}/config.inc.php
 %{_postacidir}/classes
 %{_postacidir}/images
 %{_postacidir}/includes
