@@ -81,7 +81,7 @@ if [ -f %{_sysconfdir}/httpd/httpd.conf ] && \
 fi
 echo "Before you start you have to:" >&2
 zcat %{_docdir}/%{name}-%{version}/INSTALL-PLD
-echo "You can find that info in %{_docdir}/%{name}-%{version}/INSTALL-PLD" >&2
+echo "You can find that info in %{_docdir}/%{name}-%{version}/INSTALL-PLD.gz" >&2
 
 %preun
 if [ "$1" = 0 ]; then
