@@ -6,7 +6,7 @@ diff -Nur postaci-1.1.3-orig/includes/global.inc postaci-1.1.3/includes/global.i
    // DO NOT FORGET THE TAILING SLASH!!!, YOU REALLY NEED TO CHANGE THIS.
 
 -  $attach_directory = "/tmp/postaci/send/";
-+  $attach_directory = "/home/services/httpd/html/postaci-1.1.3/tmp/send/";
++  $attach_directory = "/home/services/httpd/html/postaci/tmp/send/";
 
    // 10.
    // postaci_directory is where the Postaci installation resides on your directory structure.
@@ -14,7 +14,7 @@ diff -Nur postaci-1.1.3-orig/includes/global.inc postaci-1.1.3/includes/global.i
    // DO NOT FORGET THE TAILING SLASH!!! YOU REALLY NEED TO CHANGE THIS
 
 -  $postaci_directory = "/home/httpd/htdocs/postaci/";
-+  $postaci_directory = "/home/services/httpd/html/postaci-1.1.3/";
++  $postaci_directory = "/home/services/httpd/html/postaci/";
 
    // 11.
    // Although Cyrus IMAP has some slight differences, Postaci seems to work with all IMAP servers.
@@ -23,7 +23,7 @@ diff -Nur postaci-1.1.3-orig/includes/global.inc postaci-1.1.3/includes/global.i
    // DO NOT FORGET THE TAILING SLASH!!!
 
 -  $pop3_attach_dir = "/tmp/postaci/store/";
-+  $pop3_attach_dir = "/home/services/httpd/html/postaci-1.1.3/tmp/store/";
++  $pop3_attach_dir = "/home/services/httpd/html/postaci/tmp/store/";
 
    // 13.
    // You set the title here.
