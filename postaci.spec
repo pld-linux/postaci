@@ -74,11 +74,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 if [ -f %{_sysconfdir}/httpd/httpd.conf ] && \
-   ! grep -q "^Include.*/%{name}.conf" %{_sysconfdir}/httpd/httpd.conf; then
-	echo "Include %{_sysconfdir}/httpd/%{name}.conf" >> %{_sysconfdir}/httpd/httpd.conf
-	if [ -f /var/lock/subsys/httpd ]; then
-		/etc/rc.d/init.d/httpd restart 1>&2
-	fi
+	! grep -q "^Include.*/%{name}.conf" %{_sysconfdir}/httpd/httpd.conf; then
+		echo "Include %{_sysconfdir}/httpd/%{name}.conf" >> %{_sysconfdir}/httpd/httpd.conf
+		if [ -f /var/lock/subsys/httpd ]; then
+			/etc/rc.d/init.d/httpd restart 1>&2
+		fi
 fi
 echo "Before you start you have to:" >&2
 zcat %{_docdir}/%{name}-%{version}/INSTALL-PLD
