@@ -5,7 +5,8 @@ Release:	0.1
 License:	GPL
 Group:		Applications
 Source0:	http://www.trlinux.com/dist/%{name}-%{version}.tar.gz
-Patch0:		postaci-pld.patch
+Source1:	%{name}-INSTALL.PLD
+Patch0:		%{name}-pld.patch
 URL:		http://www.trlinux.com/
 Requires:	webserver
 Requires:	apache-mod_auth
@@ -48,13 +49,20 @@ install includes/*.inc $RPM_BUILD_ROOT%{_postacidir}/includes
 install lang/*.inc $RPM_BUILD_ROOT%{_postacidir}/lang
 install queries/{postaci-{ms,my,pg}sql-1.1,tblDomains}.sql $RPM_BUILD_ROOT%{_postacidir}/queries
 install queries/UPGRADE/upgrade-mysql-1.1.{0,1}-1.1.3.sql $RPM_BUILD_ROOT%{_postacidir}/queries/UPGRADE
+install %{SOURCE1} INSTALL-PLD
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+echo "Before you start you have to:" >&2
+zcat %{_docdir}/%{name}-%{version}/INSTALL-PLD
+echo "You can find that info in %{_docdir}/%{name}-%{version}/INSTALL-PLD" >&2
+
 %files
 %defattr(644,root,root,755)
 %doc doc/{FAQ/FAQ,TODO,WHATSNEW,THANKS,INSTALL,UPGRADE}
+%doc INSTALL-PLD
 %dir %{_postacidir}
 # %attr(640,root,http) %config(noreplace) %verify(not size mtime md5) %{_postacidir}/config.inc.php
 %{_postacidir}/classes
