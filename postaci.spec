@@ -11,8 +11,8 @@ Source1:	%{name}-INSTALL.PLD
 Source2:	%{name}.conf
 Patch0:		%{name}-pld.patch
 URL:		http://www.trlinux.com/
-Requires:	apache
-Requires:	apache-mod_auth
+Requires:	webserver = apache
+Requires:	apache(mod_auth)
 Requires:	php >= 4.1.0
 Requires:	php-imap
 Requires:	php-mysql
