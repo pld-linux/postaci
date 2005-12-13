@@ -11,11 +11,11 @@ Source1:	%{name}-INSTALL.PLD
 Source2:	%{name}.conf
 Patch0:		%{name}-pld.patch
 URL:		http://www.trlinux.com/
-Requires:	webserver = apache
 Requires:	apache(mod_auth)
-Requires:	php >= 4.1.0
 Requires:	php-imap
 Requires:	php-mysql
+Requires:	php >= 4.1.0
+Requires:	webserver = apache
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -102,8 +102,8 @@ fi
 %defattr(640,root,http,750)
 %dir %{_postacidir}
 %dir %{_postacidir}/includes
-%config(noreplace) %verify(not size mtime md5) %{_postacidir}/includes/global.inc
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/httpd/%{name}.conf
+%config(noreplace) %verify(not md5 mtime size) %{_postacidir}/includes/global.inc
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/httpd/%{name}.conf
 %{_postacidir}/classes
 %{_postacidir}/images
 %{_postacidir}/includes/commonhead.inc
