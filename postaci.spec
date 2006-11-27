@@ -1,3 +1,5 @@
+# TODO
+# - webapps
 Summary:	Postaci is a PHP based POP3/IMAP based e-mail client
 Summary(pl):	Postaci jest opartym na PHP klientem pocztowym obs³uguj±cym POP3/IMAP
 Name:		postaci
@@ -12,10 +14,10 @@ Source2:	%{name}.conf
 Patch0:		%{name}-pld.patch
 URL:		http://www.trlinux.com/
 Requires:	apache(mod_auth)
-Requires:	php-imap
-Requires:	php-mysql
-Requires:	php >= 4.1.0
+Requires:	php(imap)
+Requires:	php(mysql)
 Requires:	webserver = apache
+Requires:	webserver(php) >= 4.1.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
