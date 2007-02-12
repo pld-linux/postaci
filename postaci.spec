@@ -1,7 +1,7 @@
 # TODO
 # - webapps
 Summary:	Postaci is a PHP based POP3/IMAP based e-mail client
-Summary(pl):	Postaci jest opartym na PHP klientem pocztowym obs³uguj±cym POP3/IMAP
+Summary(pl.UTF-8):   Postaci jest opartym na PHP klientem pocztowym obsÅ‚ugujÄ…cym POP3/IMAP
 Name:		postaci
 Version:	1.1.3
 Release:	1
@@ -34,17 +34,17 @@ folders. Postaci is multilingual. It currently supports Dutch,
 English, French, German, Italian, Norwegian, Polish, Portuguese,
 Spanish, Turkish.
 
-%description -l pl
-Postaci jest opartym na PHP klientem pocztowym wspieraj±cym POP3/IMAP.
-Obs³uguje on obydwa protoko³y, a wybór domy¶lnego odbywa siê poprzez
-plik konfiguracyjny. Postaci jest niezale¿ny od platformy. Mo¿e
-dzia³aæ na dowolnym systemie operacyjnym z obs³ug± PHP. Postaci jest
-równie¿ niezale¿ny od bazy danych. Zawiera wsparcie dla MySQL, mSQL,
+%description -l pl.UTF-8
+Postaci jest opartym na PHP klientem pocztowym wspierajÄ…cym POP3/IMAP.
+ObsÅ‚uguje on obydwa protokoÅ‚y, a wybÃ³r domyÅ›lnego odbywa siÄ™ poprzez
+plik konfiguracyjny. Postaci jest niezaleÅ¼ny od platformy. MoÅ¼e
+dziaÅ‚aÄ‡ na dowolnym systemie operacyjnym z obsÅ‚ugÄ… PHP. Postaci jest
+rÃ³wnieÅ¼ niezaleÅ¼ny od bazy danych. Zawiera wsparcie dla MySQL, mSQL,
 Microsoft SQL, Sybase, PostgreSQL. Do symulacji skrzynek pocztowych
 POP3 korzysta z bardzo skomplikowanych operacji w bazie danych.
-Postaci jest wielojêzyczny. Aktualnie wspiera nastêpuj±ce jêzyki:
-angielski, francuski, hiszpañski, holenderski, niemiecki, norweski,
-polski, portugalski, turecki i w³oski.
+Postaci jest wielojÄ™zyczny. Aktualnie wspiera nastÄ™pujÄ…ce jÄ™zyki:
+angielski, francuski, hiszpaÅ„ski, holenderski, niemiecki, norweski,
+polski, portugalski, turecki i wÅ‚oski.
 
 %prep
 %setup -q
