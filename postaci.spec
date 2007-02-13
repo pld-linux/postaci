@@ -1,7 +1,7 @@
 # TODO
 # - webapps
 Summary:	Postaci is a PHP based POP3/IMAP based e-mail client
-Summary(pl.UTF-8):   Postaci jest opartym na PHP klientem pocztowym obsługującym POP3/IMAP
+Summary(pl.UTF-8):	Postaci jest opartym na PHP klientem pocztowym obsługującym POP3/IMAP
 Name:		postaci
 Version:	1.1.3
 Release:	1
