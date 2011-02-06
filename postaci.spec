@@ -98,7 +98,7 @@ if [ "$1" = 0 ]; then
 fi
 
 %files
-%defattr(644,root,http,755)
+%defattr(644,root,root,755)
 %doc doc/{FAQ/FAQ,TODO,WHATSNEW,THANKS,INSTALL,UPGRADE}
 %doc INSTALL-PLD
 %defattr(640,root,http,750)
